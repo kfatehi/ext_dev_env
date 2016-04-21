@@ -1,7 +1,8 @@
 {
    "info": {
         "id": "com.zakharchenko.sergey.sankey",
-        "description": "Simple sankey diagram"
+        "description": "Simple sankey diagram",
+        "url": "https://github.com/sergzak022/sankey"
    },
    "buckets": [
         {

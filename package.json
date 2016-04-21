@@ -4,9 +4,10 @@
   "description": "Template for webpack project",
   "main": "index.js",
   "scripts": {
+    "prod": "webpack -p --progress --colors",
     "build": "webpack --progress --colors",
     "watch": "webpack --watch --progress --colors",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./tests"
   },
   "author": "",
   "license": "BSD",
@@ -20,5 +21,11 @@
     "json-loader": "^0.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.15"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "object-assign": "^4.0.1",
+    "sinon": "^1.17.3"
   }
 }

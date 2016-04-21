@@ -24,7 +24,7 @@ function traverse( node, res,  cb ) {
 
 // if type is number than return it,
 // else throw an error
-function verifyNumber( value ) {
+function verifyNumber( value, key ) {
   if (value && value.constructor === Number) {
     return value;
   } else {
@@ -32,7 +32,7 @@ function verifyNumber( value ) {
   }
 }
 
-function verifyString( value ) {
+function verifyString( value, key ) {
   if ( value && value.constructor === String ) {
     return value;
   } else {
@@ -46,9 +46,9 @@ function parseLeaf (leaf, res, key) {
   //TODO: add suprot for more types: color, date, array(number)
   switch(leaf.type) {
     case 'number':
-      return verifyNumber(leaf.type, leaf.defaultValue);
+      return verifyNumber(leaf.defaultValue, key);
     case 'string':
-      return verify(leaf.type, leaf.defaultValue);
+      return verifyString(leaf.defaultValue, key);
     default:
       throw new Error("type of the object with name " + key + "is not supported");
   }
@@ -56,7 +56,8 @@ function parseLeaf (leaf, res, key) {
   console.log(leaf);
 }
 
-module.exports = ( schema ) => {
+export default ( schema ) => {
   var result = {};
   traverse( schema, result, parseLeaf );
+  return result;
 };

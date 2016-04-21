@@ -3,9 +3,9 @@ var path = require('path'),
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: path.join(__dirname, './project/index.js'),
+  entry: path.join(__dirname, './projects/com.zakharchenko.sergey.sankey/index.js'),
   output: {
-    path: path.join(__dirname, './project/dist'),
+    path: path.join(__dirname, './projects/com.zakharchenko.sergey.sankey/dist'),
     library: 'myext',
     filename: 'myext.js'
   },
